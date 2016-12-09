@@ -1,7 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"log"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("vim-go")
+
+	router := NewRouter()
+
+	log.Fatal(http.ListenAndServe(":8765", router))
 }
